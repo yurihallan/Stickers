@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 
 public class GeradoraDeFigurinhas {
     
-    private static final Pattern REGEX_ITEMS_IMAGE = Pattern.compile(".\\([@][.])([\S]*)([.][a-z]{3})$");
+    //private static final Pattern REGEX_ITEMS_IMAGE = Pattern.compile(".\\([@][.])([\S]*)([.][a-z]{3})$");
     
     void cria(InputStream inputStream, String nomeArquivo) throws Exception{
         //leitura da imagem
@@ -35,15 +35,8 @@ public class GeradoraDeFigurinhas {
         //escrever uma frase na nova imagem
         graphics.drawString("TOPZEIRA", 0, novaAltura - 100);
         
-
-       
-        
-
-        //escrever a nova em um arquivo
-        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
+        //escrever a nova iamgem em um arquivo
+        ImageIO.write(novaImagem, "png", new File("saida/"+nomeArquivo));
     }
-
-
-
 
 }
